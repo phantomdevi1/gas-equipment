@@ -6,9 +6,15 @@
     <link rel="stylesheet" href="style.css" />
     <title>Учёт товара</title>
     <style>
-        .red { color: red; }
-        .yellow { color: yellow; }
-        .green { color: green; }
+        .red { color: red;         
+            text-align: center;
+        }
+        .yellow { color: yellow; 
+            text-align: center;
+        }
+        .green { color: #2df635;
+        text-align: center; 
+    }
     </style>
 </head>
 <body>

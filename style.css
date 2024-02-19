@@ -17,13 +17,13 @@
 }
 
 body {
-  background-color: #0072ba;
+  background-color: #117ec2;
   color: #fff;
 }
 
 /*header*/
 .header_index {
-  min-height: 40vh;
+  min-height: 34vh;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -41,10 +41,9 @@ body {
 }
 
 .toolbar {
-  margin-top: 3%;
+  margin-top: 1%;
   justify-content: center;
   width: 40%;
-  margin-bottom: 2%;
 }
 
 .toolbar a {
@@ -93,23 +92,24 @@ body {
 /*hello_block*/
 .hello_block {
   min-height: 442px;
-  width: 100%;
-  background: url(img/hello_block_back.svg);
   display: flex;
   flex-direction: column;
+  max-width: 600px;
 }
 .hello_block h2 {
   color: #f26419;
   font-weight: bold;
   font-size: 48px;
-  padding-top: 100px;
+  margin-top: 100px;
+  background-color: #fff;
 }
 .hello_block p {
-  margin-top: 40px;
+  padding: 10px 10px 5px 5px;
   max-width: 565px;
   font-size: 25px;
   font-weight: 400;
   color: #86bbd8;
+  background-color: #fff;
 }
 
 /*discount_cart_block*/
@@ -163,8 +163,7 @@ body {
   padding: 20px;
 }
 .discount_cart_btn a:hover {
-  background-color: rgb(38, 38, 38);
-  color: #86bbd8;
+  background-color: #fff;
   transition: 0.3s;
 }
 /*preview_block*/
@@ -177,29 +176,40 @@ body {
   background: url(img/preview_block_back.svg);
 }
 .preview_cart_block {
-  max-width: 1000px;
+  max-width: 1050px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
+
 .preview_cart {
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   max-width: 326px;
   color: #86bbd8;
   font-size: 22px;
   font-weight: bold;
-  height: 460px;
-  margin-left: 10px;
+  min-height: 460px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  opacity: 90%;
+}
+.preview_cart img {
+  max-width: 320px;
+  border-radius: 5px;
 }
 .preview_cart p {
   margin-top: 19px;
+  color: #117ec2;
+  margin-bottom: 20px;
 }
 
 /*adventure_block*/
 .adventure_block {
-  height: 860px;
+  min-height: 860px;
   display: flex;
   align-items: center;
 }
@@ -210,6 +220,14 @@ body {
   max-width: 461px;
   text-align: center;
   margin-top: 45px;
+  background-color: #fff;
+  color: #117ec2;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: 90%;
+}
+.adventure_cart img {
+  width: 400px;
 }
 .adventure_cart h2 {
   margin-top: 19px;
@@ -235,8 +253,7 @@ body {
   text-decoration: none;
 }
 .adventure_cart a:hover {
-  background-color: rgb(38, 38, 38);
-  color: #86bbd8;
+  background-color: #117ec2;
   transition: 0.3s;
 }
 
@@ -607,9 +624,8 @@ hr {
   font-size: 24px;
   font-weight: bold;
   margin-left: 0;
-  white-space: nowrap; /* Запрет на перенос текста на новую строку */
-  overflow: hidden; /* Скрытие части текста, выходящей за границы блока */
-  text-overflow: ellipsis; /* Замена скрытой части текста на многоточие */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .category_quantity_warehouse {
   margin-left: 0px;
@@ -934,7 +950,7 @@ hr {
   cursor: pointer;
 }
 .open_discount_card:hover {
-  background-color: #f26419;
+  background-color: #fff;
 }
 
 /*create_product */
@@ -1135,11 +1151,11 @@ hr {
 .sort_order {
   width: 25%;
   height: 40px;
-  background-color: #545454;
-  border-radius: 10px;
-  border: none;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #fff;
   font-size: 20px;
-  color: #fff;
+  color: black;
   cursor: pointer;
 }
 .sort_order:active {
@@ -1148,11 +1164,11 @@ hr {
 .category_filter {
   width: 25%;
   height: 40px;
-  background-color: #545454;
-  border-radius: 10px;
-  border: none;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #fff;
   font-size: 20px;
-  color: #fff;
+  color: black;
   cursor: pointer;
 }
 .show_products {
@@ -1166,13 +1182,13 @@ hr {
   font-weight: 500;
 }
 .show_products:hover {
-  background-color: #f26419;
+  background-color: #0072c7;
   color: #fff;
 }
 .edit_product_card {
   width: 80%;
   min-height: 350px;
-  background-color: #0d0d0d;
+  background-color: #0072c7;
   display: flex;
   margin-bottom: 100px;
   border-radius: 10px;
@@ -1205,17 +1221,17 @@ hr {
 }
 
 .productname_input {
-  background-color: #333333;
-  border: none;
-  border-radius: 10px;
+  background-color: #0072c7;
+  border: 1px solid #fff;
+  border-radius: 5px;
   width: 100%;
   font-size: 20px;
   color: #fff;
 }
 .cost_input {
-  background-color: #333333;
-  border: none;
-  border-radius: 10px;
+  background-color: #0072c7;
+  border: 1px solid #fff;
+  border-radius: 5px;
   width: 80%;
   margin-right: 5px;
   font-size: 20px;
@@ -1227,17 +1243,17 @@ hr {
 }
 .info_product_block select {
   margin-bottom: 20px;
-  background-color: #333333;
-  border: none;
-  border-radius: 10px;
+  background-color: #0072c7;
+  border: 1px solid #fff;
+  border-radius: 5px;
   width: 100%;
   font-size: 20px;
   color: #fff;
 }
 .description_input {
-  background-color: #333333;
-  border: none;
-  border-radius: 10px;
+  background-color: #0072c7;
+  border: 1px solid #fff;
+  border-radius: 5px;
   width: 100%;
   font-size: 20px;
   color: #fff;
@@ -1277,7 +1293,7 @@ hr {
 /* Media Queries for responsiveness */
 @media only screen and (max-width: 1200px) {
   .header_index {
-    min-height: 85vh;
+    padding-bottom: 20px;
   }
   .toolbar {
     display: flex;
@@ -1319,7 +1335,7 @@ hr {
     margin-top: 40px;
     border-radius: 10px;
     width: 70%;
-    height: 50vh;
+    min-height: 45vh;
     margin-bottom: 10px;
   }
   .ava_img {
@@ -1341,7 +1357,7 @@ hr {
   }
   .profile_block_right {
     border-radius: 10px;
-    height: 50vh;
+    min-height: 50vh;
   }
   .profile_block_right p {
     margin-top: 20px;
@@ -1356,6 +1372,11 @@ hr {
   }
   .profile_user_order {
     width: 300px;
+  }
+  .order_profile {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 
   /* profile user */
@@ -1547,6 +1568,7 @@ hr {
   }
   .profile_block_right {
     width: 90%;
+    text-align: center;
   }
   .usermail_email,
   .usernumber_phone {
@@ -1639,6 +1661,9 @@ hr {
   .discount_cart {
     gap: 0;
   }
+  .adventure_cart img {
+    width: 300px;
+  }
   .home_discount_block span {
     font-size: 15px;
   }
@@ -1661,7 +1686,10 @@ hr {
     font-size: 30px;
   }
   .heading_text {
-    font-size: 2.5em;
+    font-size: 2em;
+  }
+  .toolbar {
+    margin-top: 20px;
   }
 
   /* category */
@@ -1717,5 +1745,14 @@ hr {
   }
   .submit_rewiew {
     font-size: 25px;
+  }
+  .user_info {
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+  }
+  .usermail {
+    margin-right: 0px;
   }
 }
