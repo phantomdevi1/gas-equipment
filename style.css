@@ -759,8 +759,7 @@ hr {
   cursor: pointer;
 }
 .submit_rewiew:hover {
-  background-color: #fff;
-  color: black;
+  background-color: #0072ba;
 }
 /* basket */
 .content_basket {
