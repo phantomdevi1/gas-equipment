@@ -303,7 +303,7 @@ body {
 .auth_block {
   width: 47%;
   min-height: 1100px;
-  background-color: #222222;
+  background-color: #fff;
   margin-top: 100px;
   border-radius: 10px;
   display: flex;
@@ -318,6 +318,7 @@ body {
 .auth_block p {
   font-size: 50px;
   font-weight: bold;
+  color: #0072ba;
 }
 
 .input_text {
@@ -370,7 +371,7 @@ body {
 .registration_block {
   width: 47%;
   min-height: 900px;
-  background-color: #222222;
+  background-color: #fff;
   margin-top: 100px;
   border-radius: 10px;
   display: flex;
@@ -385,20 +386,21 @@ body {
 .registration_block p {
   font-size: 50px;
   font-weight: bold;
+  color: #0072ba;
 }
 .input_text {
   min-height: 40px;
   width: 40%;
-  background-color: #545454;
+  background-color: #fff;
   font-size: 20px;
   border-radius: 10px;
-  border: none;
+  border: 1px solid #0072ba;
 }
 
 .registration_btn {
   width: 40%;
   min-height: 40px;
-  background-color: #f26419;
+  background-color: #0072ba;
   color: white;
   font-size: 16px;
   font-weight: 300;
@@ -407,12 +409,11 @@ body {
   cursor: pointer;
 }
 .registration_btn:hover {
-  color: #f26419;
-  background-color: white;
+  background-color: #0062ff;
 }
 .span_check_password {
   text-align: center;
-  color: white;
+  color: #0072ba;
   font-size: 16px;
   width: 300px;
   margin-top: -25px;
@@ -424,6 +425,7 @@ label {
 }
 .input_account {
   margin-top: -25px;
+  color: #0072ba;
 }
 .input_account a {
   padding-left: 10px;
@@ -487,6 +489,8 @@ label {
 .img_profile_card {
   margin-top: 10%;
   width: 90%;
+  border: 1px solid #0072ba;
+  border-radius: 5px;
 }
 .status_discount_card {
   font-size: 40px;
@@ -506,8 +510,7 @@ label {
   cursor: pointer;
 }
 .add_discount_card:hover {
-  background-color: #fff;
-  color: #f26419;
+  background-color: #0072ba;
 }
 
 .profile_block_right {
@@ -789,7 +792,7 @@ hr {
 
 .basket_cart {
   width: 80%;
-  background-color: #0d0d0d;
+  background-color: #fff;
   border-radius: 10px;
   min-height: 350px;
   display: flex;
@@ -828,14 +831,14 @@ hr {
 .nametovar_basket {
   font-size: 20px;
   font-weight: bold;
-  color: #86bbd8;
+  color: #000;
   max-width: 360px;
 }
 
 .fullprice_tovar {
   font-size: 30px;
   font-weight: bold;
-  color: #f26419;
+  color: #0072ba;
 }
 
 .delete_button {
@@ -871,7 +874,7 @@ hr {
 
 .card_order {
   width: 72%;
-  background-color: #0d0d0d;
+  background-color: #fff;
   min-height: 363px;
   margin-bottom: 100px;
   border-radius: 10px;
@@ -895,6 +898,7 @@ hr {
   vertical-align: top;
   margin: 0;
   font-size: 22px;
+  color: #0072ba;
 }
 
 .info_card_order p {
@@ -1050,7 +1054,7 @@ hr {
 .select_status {
   width: 15%;
   max-height: 50px;
-  background-color: #545454;
+  background-color: #fff;
   border-radius: 10px;
   font-size: 25px;
   color: #888888;

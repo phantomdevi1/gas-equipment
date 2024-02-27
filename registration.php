@@ -58,10 +58,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <img src="img/logo_auth.svg" alt="" />
         <p>Регистрация</p>
         
-          <input class="input_text" type="text" name="user_email" placeholder="Введите вашу почту"/>
-          <input class="input_text" type="text" name="user_phone" placeholder="Введите ваш номер телефона"/>
-          <input class="input_text" type="text" name="user_name" placeholder="Введите ваше имя"/>
-          <input class="input_text" type="password" name="user_password" placeholder="Введите ваш пароль" id="passwordInputReg"/>
+          <input class="input_text" type="text" name="user_email" placeholder="Введите вашу почту" required/>
+          <input class="input_text" type="text" name="user_phone" placeholder="Введите ваш номер телефона" required/>
+          <input class="input_text" type="text" name="user_name" placeholder="Введите ваше имя" required/>
+          <input class="input_text" type="password" name="user_password" placeholder="Введите ваш пароль" id="passwordInputReg" required/>
           <span class="span_check_password">
           <input class="check_password" type="checkbox" id="showPasswordReg" />
           <label for="showPasswordReg">Показать пароль</label>

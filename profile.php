@@ -125,7 +125,7 @@ mysqli_close($conn);
             $avatar = "img/admin_avatar.png";
         }
         else{
-            $avatar = "img/default_ava.svg";
+            $avatar = "img/default_ava.jpg";
         }
         ?>
         <img src="<?= $avatar ?>" alt="Аватарка" class="ava_img" width="90%" max-width="250px">
@@ -187,7 +187,7 @@ mysqli_close($conn);
                 echo "<a href='product_accounting.php'><img src='img/accounting_product.svg' width='90%'></a>";
             }
             else{
-                echo "<a href='orders.php'><img src='img/actual_order.svg' alt='заказы' class='profile_user_order' width='90%'></a>";
+                echo "<a href='orders.php'><img src='img/order_admin_icon.svg' alt='заказы' class='profile_user_order' width='90%'></a>";
             }            
             ?>                 
             </div>

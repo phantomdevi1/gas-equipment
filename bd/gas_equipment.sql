@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Фев 16 2024 г., 17:24
+-- Время создания: Фев 20 2024 г., 10:58
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.0.22
 
@@ -34,6 +34,14 @@ CREATE TABLE `cart` (
   `quantity` int NOT NULL,
   `date_added` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `quantity`, `date_added`) VALUES
+(90, 1, 65, 1, '2024-02-20 06:49:05'),
+(91, 1, 89, 1, '2024-02-20 06:49:12');
 
 -- --------------------------------------------------------
 
@@ -81,6 +89,13 @@ CREATE TABLE `orders` (
   `full_price` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `user_id`, `order_date`, `status`, `full_price`) VALUES
+(40, 10, '2024-02-20 07:15:33', 'В обработке', 39900);
+
 -- --------------------------------------------------------
 
 --
@@ -93,6 +108,13 @@ CREATE TABLE `order_items` (
   `product_id` int DEFAULT NULL,
   `quantity` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `order_items`
+--
+
+INSERT INTO `order_items` (`item_id`, `order_id`, `product_id`, `quantity`) VALUES
+(57, 40, 62, 1);
 
 -- --------------------------------------------------------
 
@@ -119,10 +141,10 @@ INSERT INTO `product` (`ID`, `name`, `description`, `price`, `image`, `category`
 (59, 'Газовая плита Electrolux EKG6330AOK', '3 конфорки, газовая духовка, автоподжиг, черный', '18990.00', 'img/product/gazovaya_plita2.jpg', 1, 15),
 (60, 'Газовая плита Gorenje K5111AW', '4 конфорки, газовая духовка, эмалированная поверхность, белый', '17990.00', 'img/product/gazovaya_plita3.jpg', 1, 25),
 (61, 'Газовый котел BAXI ECO 3 1.240Fi', 'Котел с закрытой камерой сгорания, мощность 24 кВт, модулирующий', '46790.00', 'img/product/gazovyy_kotel.jpg', 2, 12),
-(62, 'Газовый котел Protherm Panther 25 KTZ', 'Компактный настенный котел, мощность 25 кВт, электронная плата', '39900.00', 'img/product/gazovyy_kotel2.jpg', 2, 18),
+(62, 'Газовый котел Protherm Panther 25 KTZ', 'Компактный настенный котел, мощность 25 кВт, электронная плата', '39900.00', 'img/product/gazovyy_kotel2.jpg', 2, 17),
 (63, 'Газовый котел Vaillant ecoTEC plus VU INT 306/5-5', 'Высокоэффективный котел, мощность 30 кВт, модулирующий', '56990.00', 'img/product/gazovyy_kotel3.jpg', 2, 25),
 (64, 'Газовая колонка Bosch W 125 K 1 E 23', 'Проточная газовая колонка, надежная и компактная, 12 л/мин', '10990.00', 'img/product/gazovaya_kolonka.jpg', 3, 8),
-(65, 'Газовая колонка Baxi WGB 20 E', 'Электронно-проточная газовая колонка, автоматическая регулировка мощности, 16 л/мин', '13490.00', 'img/product/gazovaya_kolonka2.jpg', 3, 10),
+(65, 'Газовая колонка Baxi WGB 20 E', 'Электронно-проточная газовая колонка, автоматическая регулировка мощности, 16 л/мин', '13490.00', 'img/product/gazovaya_kolonka2.jpg', 3, 9),
 (66, 'Газовая колонка Mora Top Flow', 'Модель с электронным поджигом, эффективной системой безопасности, 12 л/мин', '12500.00', 'img/product/gazovaya_kolonka3.jpg', 3, 15),
 (67, 'Газовый баллон Campingaz R 904', 'Баллон смешанного газа для газовых горелок и ламп, объем 1,8 кг', '2300.00', 'img/product/gazovyy_ballon.jpg', 4, 30),
 (68, 'Газовый баллончик Coleman C500', 'Баллончик с пропан-бутановой смесью, объем 440 г', '750.00', 'img/product/gazovyy_ballonchik.jpg', 4, 40),
@@ -139,14 +161,14 @@ INSERT INTO `product` (`ID`, `name`, `description`, `price`, `image`, `category`
 (79, 'Мобильный газовый обогреватель EINHELL GH-GH4202P', 'Мощность 4200 Вт, пьезоподжиг, автоматическое отключение при опрокидывании', '3190.00', 'img/product/gazovyy_obogrevatel.jpg', 8, 20),
 (80, 'Газовый обогреватель Feron HG 115 M', 'Мощность 11500 ккал/час, автоматический регулятор пламени', '6490.00', 'img/product/gazovyy_obogrevatel2.jpg', 8, 15),
 (81, 'Газовый тепловентилятор Energy Eco 4200', 'Мощность 4200 Вт, автоматическое отключение при опрокидывании, защита от перегрева', '4190.00', 'img/product/gazovyy_obogrevatel3.jpg', 8, 25),
-(82, 'Газовый гриль Char-Broil Convective 210 B', '2 горелки, площадь гриля 35x41 см, портативный', '9990.00', 'img/product/gazovyy_gril.jpg', 9, 10),
+(82, 'Газовый гриль Char-Broil Convective 210 B', '2 горелки, площадь гриля 35x41 см, портативный', '9990.00', 'img/product/gazovyy_gril.jpg', 9, 0),
 (83, 'Газовый гриль Campingaz 3 Series Classic LS', '3 горелки, площадь гриля 61x45 см, боковая конфорка', '18990.00', 'img/product/gazovyy_gril2.jpg', 9, 20),
 (84, 'Газовый барбекю Broil King Crown 420', '4 горелки, площадь гриля 65x42 см, эмалированный корпус', '31990.00', 'img/product/gazovyy_barbekyu.jpg', 9, 15),
 (85, 'Газовый компрессор Einhell TH-AC 190/6 OF', 'Мощность 1100 Вт, производительность 185 л/мин, емкость ресивера 6 л', '6690.00', 'img/product/gazovyy_kompressor.jpg', 10, 20),
 (86, 'Газовый компрессор Sturm! AC1050G', 'Мощность 750 Вт, производительность 180 л/мин, емкость ресивера 24 л', '4490.00', 'img/product/gazovyy_kompressor2.jpg', 10, 15),
 (87, 'Газовый компрессор Hyundai HAC 1020', 'Мощность 1100 Вт, производительность 180 л/мин, емкость ресивера 20 л', '5390.00', 'img/product/gazovyy_kompressor3.jpg', 10, 25),
 (88, 'Детектор утечки газа Xiaomi Mijia Honeywell Gas Alarm', 'Оповещает о наличии газа в воздухе, работает от батареек', '1790.00', 'img/product/detektor_utechki_gaza.jpg', 11, 30),
-(89, 'Сигнализация для дома Securiton GD-4', 'Система контроля газа в доме, сигнализирует об утечке газа', '3490.00', 'img/product/signalizatsiya_utechki_gaza.jpg', 11, 40),
+(89, 'Сигнализация для дома Securiton GD-4', 'Система контроля газа в доме, сигнализирует об утечке газа', '3490.00', 'img/product/signalizatsiya_utechki_gaza.jpg', 11, 39),
 (90, 'Датчик утечки газа Cavius Gas Alarm 220-0011', 'Самопроверяющийся датчик газа, работает от батареек', '2990.00', 'img/product/datchik_utechki_gaza.jpg', 11, 50),
 (91, 'Газовый резак GCE Oxy-Fuel 3000', 'Ручной газовый резак с регулируемым пламенем, набор сопел включен', '4990.00', 'img/product/gazovyy_rezak.jpg', 12, 20),
 (92, 'Газовый резак KOVEA LPG Adapter KA-0101', 'Компактный газовый резак для кемпинга, подходит для различных баллонов', '1190.00', 'img/product/gazovyy_rezak2.jpg', 12, 15),
@@ -180,13 +202,9 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`review_id`, `username`, `rating`, `review_text`, `submission_date`) VALUES
-(7, 'admin', 5, 'qwfqfqwf', '2024-02-16 13:31:08'),
-(8, 'admin', 5, 'qwdfqwfqwf', '2024-02-16 13:31:13'),
-(9, 'admin', 5, 'qwdfqwfqwf', '2024-02-16 13:31:18'),
-(10, 'admin', 5, 'qwdfqwfqwf', '2024-02-16 13:32:10'),
-(11, 'admin', 5, 'qwdfqwfqwf', '2024-02-16 13:32:28'),
-(12, 'admin', 5, 'qwdfqwfqwf', '2024-02-16 13:32:42'),
-(13, 'admin', 5, '', '2024-02-16 13:34:00');
+(7, 'admin', 5, 'Заправляюсь только на ГазпромНефти, пользуюсь газом от Газпрома, обожаю ГазпромБанк. Поэтому, газовое оборудование я буду покупать только в Газпроме!', '2024-02-16 13:31:08'),
+(8, 'admin', 5, 'Очень вежливые консультанты, заказал, забрал, оплатил. Удобно', '2024-02-16 13:31:13'),
+(9, 'admin', 5, 'Всё ок', '2024-02-16 13:31:18');
 
 -- --------------------------------------------------------
 
@@ -209,7 +227,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `user_email`, `user_phone`, `user_name`, `user_password`, `access_status`, `discount_card`) VALUES
-(1, 'admin@gazprom.ru', '89451672356', 'admin', 'admin', 1, 1);
+(1, 'admin@gazprom.ru', '89451672356', 'admin', 'admin', 1, 1),
+(10, 'test@gazprom.ru', '89621542564', 'test', '1234', 0, 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -271,7 +290,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `cart_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT для таблицы `category`
@@ -283,13 +302,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `order_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT для таблицы `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `item_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `item_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT для таблицы `product`
@@ -307,7 +326,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
