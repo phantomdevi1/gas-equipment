@@ -665,7 +665,7 @@ hr {
 /* reviews */
 .content_reviews {
   margin-top: 100px;
-  max-width: 1500px;
+  max-width: 1499px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -677,7 +677,6 @@ hr {
   background-color: #fff;
   border-radius: 10px;
   margin-bottom: 160px;
-  margin-right: 40px;
 }
 .name_block {
   margin: 20px;

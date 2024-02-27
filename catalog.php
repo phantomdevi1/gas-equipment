@@ -25,6 +25,7 @@ $result = mysqli_query($conn, $category_query);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
     <title>Каталог</title>
 </head>
 
