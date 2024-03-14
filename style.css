@@ -1772,6 +1772,9 @@ tbody input {
   .fourteen_adaptive_delete {
     display: none;
   }
+  .title_discount_card {
+    font-size: 3em;
+  }
 }
 
 @media only screen and (max-width: 452px) {
