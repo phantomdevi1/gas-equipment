@@ -1699,6 +1699,15 @@ hr {
     margin: 0 auto;
     font-size: 3em;
   }
+
+  /* auth */
+  .auth_block a {
+    width: 60%;
+  }
+  /* registration */
+  .registration_btn {
+    width: 70%;
+  }
 }
 
 @media only screen and (max-width: 452px) {
@@ -1738,6 +1747,10 @@ hr {
   .title_write_rewiew {
     font-size: 30px;
   }
+  .rewiew_text {
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
   .write_rewiew_estimation p {
     font-size: 25px;
   }
@@ -1745,8 +1758,12 @@ hr {
     height: 30px;
     font-size: 20px;
   }
+  .input_rewiew {
+    width: 75%;
+  }
   .submit_rewiew {
     font-size: 25px;
+    width: 75%;
   }
   .user_info {
     flex-direction: column;
@@ -1756,5 +1773,15 @@ hr {
   }
   .usermail {
     margin-right: 0px;
+  }
+
+  /* registration */
+  .registration_block p {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .auth_block a {
+    width: 70%;
   }
 }
