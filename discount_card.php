@@ -58,8 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="content_discount_card">
         <div class="info_discount_card">
-            <h1 class="title_discount_card">Хотите самые выгодные предложения?</h1>
-            <img class="money3d" src="img/3dicons.svg" alt="" width="25%">    
+            <h1 class="title_discount_card">Хотите самые выгодные предложения?</h1>  
         </div>
         <form method="post">
             <button type="submit" class="open_discount_card">Оформить карту</button>
