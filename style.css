@@ -1291,6 +1291,32 @@ hr {
   transform: scale(1.05);
 }
 
+/* product accounting */
+.content_profile table {
+  margin-top: 50px;
+}
+tbody {
+  text-align: center;
+}
+tbody input {
+  width: 60%;
+  text-align: center;
+}
+.save_changes {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.save_changes:hover {
+  background-color: #117ec2;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
 /* Media Queries for responsiveness */
 @media only screen and (max-width: 1200px) {
   .header_index {
@@ -1672,6 +1698,12 @@ hr {
     margin-top: 15px;
     text-align: center;
   }
+
+  /* product_accounting */
+
+  tbody th {
+    font-size: 15px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1730,6 +1762,15 @@ hr {
   /* discount card */
   .title_discount_card {
     font-size: 3.5em;
+  }
+  .sixteen_adaptive_delete {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .fourteen_adaptive_delete {
+    display: none;
   }
 }
 

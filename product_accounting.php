@@ -71,15 +71,14 @@ if (!$result) {
 </header>
 
 <div class="content_profile">
-    <form method="post">
+    <form method="post" style="text-align: center;">
         <table border="1">
             <tr>
-                <th>ID</th>
                 <th>Имя товара</th>
-                <th>Количество на складе</th>
-                <th>Продано всего</th>
-                <th>Продано за месяц</th>
-                <th>Количество (редактируемо)</th>
+                <th class='fourteen_adaptive_delete'>Количество на складе</th>
+                <th class='sixteen_adaptive_delete'>Продано всего</th>
+                <th class='fourteen_adaptive_delete'>Продано за месяц</th>
+                <th>Количество</th>
             </tr>
 
             <?php
@@ -94,11 +93,10 @@ if (!$result) {
               $colorClass = ($quantityWarehouse == 0) ? 'red' : (($quantityWarehouse <= 10) ? 'yellow' : 'green');
           ?>
           <tr>
-              <td><?php echo $productId; ?></td>
               <td><?php echo $productName; ?></td>
-              <td class="<?php echo $colorClass; ?>"><?php echo $quantityWarehouse; ?></td>
-              <td><?php echo $totalSold; ?></td>
-              <td><?php echo $monthlySold; ?></td>
+              <td class="<?php echo $colorClass; ?> fourteen_adaptive_delete"><?php echo $quantityWarehouse; ?></td>
+              <td class='sixteen_adaptive_delete'><?php echo $totalSold; ?></td>
+              <td class='fourteen_adaptive_delete'><?php echo $monthlySold; ?></td>
               <td>
                   <input type="number" name="quantity_<?php echo $productId; ?>" value="<?php echo $quantityWarehouse; ?>" />
               </td>
@@ -108,7 +106,7 @@ if (!$result) {
           
           ?>
         </table>
-        <button type="submit" name="save_changes">Сохранить</button>
+        <button type="submit" name="save_changes" class="save_changes">Сохранить</button>
     </form>
 </div>
 
