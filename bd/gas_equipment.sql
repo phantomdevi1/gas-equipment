@@ -33,7 +33,7 @@ CREATE TABLE `cart` (
   `product_id` int DEFAULT NULL,
   `quantity` int NOT NULL,
   `date_added` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Дамп данных таблицы `cart`
@@ -52,7 +52,7 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `quantity`, `date_added`
 CREATE TABLE `category` (
   `ID` int NOT NULL,
   `category_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Дамп данных таблицы `category`
@@ -87,7 +87,7 @@ CREATE TABLE `orders` (
   `order_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `status` varchar(255) DEFAULT NULL,
   `full_price` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Дамп данных таблицы `orders`
@@ -107,7 +107,7 @@ CREATE TABLE `order_items` (
   `order_id` int DEFAULT NULL,
   `product_id` int DEFAULT NULL,
   `quantity` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Дамп данных таблицы `order_items`
@@ -130,7 +130,7 @@ CREATE TABLE `product` (
   `image` varchar(255) DEFAULT NULL,
   `category` int DEFAULT NULL,
   `quantity_warehouse` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Дамп данных таблицы `product`
@@ -195,7 +195,7 @@ CREATE TABLE `reviews` (
   `rating` int DEFAULT NULL,
   `review_text` text,
   `submission_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Дамп данных таблицы `reviews`
@@ -220,7 +220,7 @@ CREATE TABLE `users` (
   `user_password` varchar(255) NOT NULL,
   `access_status` int NOT NULL,
   `discount_card` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Дамп данных таблицы `users`

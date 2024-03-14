@@ -62,32 +62,59 @@
                 <input type="submit" name="submit_product" value="Добавить товар" class="add_product_btn" />
             </form>
         </div>
-
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_product'])) {
-            $targetDir = "img/product/";
-            $targetFile = $targetDir . basename($_FILES["product_image"]["name"]);
-            $imagePath = $targetFile;
-            $productName = $_POST['name_product'];
-            $productCategory = $_POST['category'];
-            $productQuantity = $_POST['quantity_product'];
-            $productPrice = $_POST['add_price'];
-            $productDescription = $_POST['description_product'];
 
-            // Проверка на пустые поля
-            if (empty($productName) || empty($productCategory) || empty($productQuantity) || empty($productPrice) || empty($productDescription) || empty($imagePath)) {
-                echo "<script>alert('Пожалуйста, заполните все поля.')</script>";
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_product'])) {
+    // Проверяем, был ли загружен файл
+    if(isset($_FILES["product_image"]) && $_FILES["product_image"]["error"] == 0) {
+        // Путь к каталогу для загружаемых изображений
+        $targetDir = "img/product/";
+        $targetFile = $targetDir . basename($_FILES["product_image"]["name"]);
+        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+        // Проверка, является ли файл изображением
+        $check = getimagesize($_FILES["product_image"]["tmp_name"]);
+        if ($check !== false) {
+            // Проверка размера файла (не более 5MB)
+            if ($_FILES["product_image"]["size"] > 5000000) {
+                echo "<script>alert('Извините, ваш файл слишком большой.')</script>";
             } else {
-                $sql = "INSERT INTO product (name, description, price, image, category, quantity_warehouse) VALUES ('$productName', '$productDescription', '$productPrice', '$imagePath', '$productCategory', '$productQuantity')";
+                // Перемещение файла в целевой каталог
+                if (move_uploaded_file($_FILES["product_image"]["tmp_name"], $targetFile)) {
+                    $imagePath = $targetFile;
+                    // Остальной код для добавления товара в базу данных
+                    $productName = $_POST['name_product'];
+                    $productCategory = $_POST['category'];
+                    $productQuantity = $_POST['quantity_product'];
+                    $productPrice = $_POST['add_price'];
+                    $productDescription = $_POST['description_product'];
 
-                if (mysqli_query($conn, $sql)) {
-                    echo "<script>alert('Товар успешно добавлен в базу данных.')</script>";
+                    // Проверка на пустые поля
+                    if (empty($productName) || empty($productCategory) || empty($productQuantity) || empty($productPrice) || empty($productDescription) || empty($imagePath)) {
+                        echo "<script>alert('Пожалуйста, заполните все поля.')</script>";
+                    } else {
+                        $sql = "INSERT INTO product (name, description, price, image, category, quantity_warehouse) VALUES ('$productName', '$productDescription', '$productPrice', '$imagePath', '$productCategory', '$productQuantity')";
+
+                        if (mysqli_query($conn, $sql)) {
+                            echo "<script>alert('Товар успешно добавлен в базу данных.')</script>";
+                        } else {
+                            echo "<script>alert('Ошибка: ' . $sql . mysqli_error($conn)')</script>";
+                        }
+                    }
                 } else {
-                    echo "<script>alert('Ошибка: ' . $sql . mysqli_error($conn)')</script>";
+                    echo "<script>alert('Произошла ошибка при загрузке вашего файла.')</script>";
                 }
             }
+        } else {
+            echo "<script>alert('Файл не является изображением.')</script>";
         }
-        ?>
+    } else {
+        echo "<script>alert('Ошибка загрузки файла.')</script>";
+    }
+}
+
+?>
+
 
         <div class="add_category">
             <h2>Добавление категории</h2>
