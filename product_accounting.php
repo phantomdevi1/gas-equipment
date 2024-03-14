@@ -117,12 +117,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save_changes'])) {
             $productId = str_replace('quantity_', '', $key);
             $newQuantity = (int)$value;
 
-            // Добавьте проверку на допустимые значения и обновите базу данных
             $update_query = "UPDATE product SET quantity_warehouse = $newQuantity WHERE ID = $productId";
             mysqli_query($conn, $update_query);
         }
     }
+
 }
 ?>
+
+<script>
+    // Перезагрузить страницу
+    function reloadPage() {
+        window.location.href = 'product_accounting.php'; 
+    }
+
+    // Вызвать функцию перезагрузки страницы после сохранения изменений
+    <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save_changes'])) : ?>
+        setTimeout(reloadPage, 500); 
+    <?php endif; ?>
+</script>
+
+
 </body>
 </html>

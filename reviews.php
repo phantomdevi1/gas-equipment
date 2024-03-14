@@ -24,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               $insert_review_query = "INSERT INTO reviews (username, rating, review_text) VALUES ('$username', $rating, '$review_text')";
               if (mysqli_query($conn, $insert_review_query)) {
                   echo '<script>alert("Отзыв успешно добавлен!");</script>';
+                  header('refresh:1;');
+                  
               } else {
                   echo "Ошибка: " . $insert_review_query . "<br>" . mysqli_error($conn);
               }
@@ -95,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <option value="1">1</option>
       </select>
     </div>
-    <textarea class="input_rewiew" name="review_text" id="reviewText" cols="30" rows="10" placeholder="Напишите свой отзыв"></textarea>
+    <textarea class="input_rewiew" name="review_text" id="reviewText" cols="30" rows="10" maxlength="300" placeholder="Напишите свой отзыв"></textarea>
     <input class="submit_rewiew" type="submit" value="Опубликовать">
   
 </div>
