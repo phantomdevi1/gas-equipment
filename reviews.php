@@ -1,7 +1,9 @@
 <?php
 session_start();
-$user_id = $_SESSION['user_id'];
 
+if (isset($_SESSION['user_id'])) {
+  $user_id = $_SESSION['user_id'];
+}
 include 'config.php';
 $reviews_query = "SELECT * FROM reviews";
 $reviews_result = mysqli_query($conn, $reviews_query);

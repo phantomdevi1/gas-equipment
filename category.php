@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-if (isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
 
     if (isset($_GET['id'])) {
         $category_id = $_GET['id'];
@@ -13,10 +11,7 @@ if (isset($_SESSION['user_id'])) {
     } else {
         echo "Категория не выбрана";
     }
-} else {
-    header("Location: auth.php");
-    exit();
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,6 +80,9 @@ if (isset($_SESSION['user_id'])) {
         }
 
         if (isset($_POST['add_to_cart'])) {
+            if (isset($_SESSION['user_id'])) {
+                $user_id = $_SESSION['user_id'];
+              
             $product_id = $_POST['product_id'];
             $quantity_category = isset($_POST['quantity_category']) ? intval($_POST['quantity_category']) : 1;
 
@@ -113,6 +111,10 @@ if (isset($_SESSION['user_id'])) {
                 echo "<script>alert('Ошибка при проверке наличия товара на складе.');</script>";
             }
         }
+        else{
+            echo "<script>alert('Для добавления товаров в корзину необходимо авторизоваться');</script>";
+        }
+    }
         ?>
     </div>
     <script>
